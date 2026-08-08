@@ -17,6 +17,24 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
     input[type=range] { appearance: slider-vertical; -webkit-appearance: slider-vertical;
                          width: 3.2rem; height: min(55vh, 22rem); accent-color: #58a6ff;
                          touch-action: none; }
+    /* für WebKit/Blink-Browser, also Chrome/Edge/Safari. Dieser Selektor ist nicht standardisiert. */    
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 50px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #cfcfcf;
+    }
+    /*  für Firefox. Auch das ist eine Mozilla-spezifische Erweiterung und nicht standardisiert. */
+    input[type=range]::-moz-range-thumb {
+      width: 50px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #cfcfcf;
+    }                  
     .hint { margin-top: 1.5rem; color: #9da7b1; font-size: .9rem; }
   </style>
 </head>

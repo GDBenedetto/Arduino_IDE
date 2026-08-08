@@ -36,11 +36,14 @@ This document describes the rover's capabilities, its components, and how they i
 - The ESP32-CAM shall transmit the full lever string on the serial bus at 5 Hz or better in a new line.
 - All controllers shall be programmed using the Arduino IDE and installed independently.
 - The rover shall use libraries from the provider for as long as possible.
+- A Arduino GIGA R1 WiFi and a Arduino GIGA Display Shield shall be used User Interface
+- the Arduino GIGA R1 WiFi shall be able to connect to the ESP32-CAM using using Wi-Fi (http://192.168.4.1:80)
+- teh GIGA Display Shield shall to used to controll the rover
 
 ## Connection Settings
 
 - Wi-Fi network: Rover-ESP32
-- Password: rovercontrol
+- Password: 123456789
 - Address: http://192.168.4.1
 - HTTP port: 80 (no port suffix is needed)
 - Serial Monitor baud rate: 115200
