@@ -67,6 +67,12 @@ void printLeverValues() {
   Serial.print(rightLeverValue);
   Serial.print(F("  Left: "));
   Serial.println(leftLeverValue);
+
+    if (rightLeverValue != 0 || leftLeverValue != 0) {
+      digitalWrite(LED_BUILTIN, HIGH);
+      } else {
+        digitalWrite(LED_BUILTIN, LOW);
+    }
 }
 
 void processReceivedByte(char received) {
@@ -91,6 +97,9 @@ void processReceivedByte(char received) {
 
 void setup() {
   Serial.begin(SERIAL_BAUD_RATE);
+
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
