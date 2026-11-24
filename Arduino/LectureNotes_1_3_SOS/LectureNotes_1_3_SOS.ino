@@ -11,9 +11,6 @@
 // Pause between letters = 3 * Dit
 // Pause between repetitions = 7 * Dit
 
-// Function declaration (prototype)
-void sendSOS(int ditDuration = 200);  // this line is needed because Function definition is after setup()
-
 const int LED_PIN = LED_BUILTIN;
 
 void setup() {
@@ -21,13 +18,7 @@ void setup() {
 }
 
 void loop() {
-  sendSOS();  // Uses the standard dit duration of 200 ms
-}
-
-// Function definition
-// Send SOS using the specified dit duration
-void sendSOS(int ditDuration = 200) {
-
+  int ditDuration = 200;
   int dahDuration = 3 * ditDuration;
 
   // Letter S: ...
@@ -66,3 +57,4 @@ void sendSOS(int ditDuration = 200) {
   // Pause before repeating SOS
   delay(7 * ditDuration);
 }
+
